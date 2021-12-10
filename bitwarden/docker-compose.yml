@@ -1,0 +1,12 @@
+  GNU nano 5.9                   docker-compose.yml                             
+version: '3'
+
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    volumes:
+      - ./vw-data:/data
