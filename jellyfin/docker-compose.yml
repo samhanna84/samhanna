@@ -1,0 +1,15 @@
+  GNU nano 5.9                   docker-compose.yml                             
+version: "3.5"
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    network_mode: "host"
+    volumes:
+      - ./config:/config
+      - ./cache:/cache
+      - /mnt/usb/Videos:/media
+      - /mnt/usb/Airsonic:/music
+    restart: "unless-stopped"
+    devices:
+      - /dev/vchiq:/dev/vchiq
