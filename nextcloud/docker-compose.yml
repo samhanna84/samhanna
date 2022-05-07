@@ -1,30 +1,9 @@
-version: '2'
-
-services:
-  db:
-    image: yobasystems/alpine-mariadb:latest
-    restart: always
-    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
-    volumes:
-      - ./db:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=nextcloud
-      - MYSQL_PASSWORD=nextcloud
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-
-  app:
-    image: nextcloud
-    restart: "unless-stopped"
-    ports:
-      - 8181:80
-    links:
-      - db
-    volumes:
-      - ./nc:/var/www/html
-    environment:
-      - MYSQL_PASSWORD=nextcloud
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-      - MYSQL_HOST=db
-      - NEXTCLOUD_TRUSTED_DOMAINS=127.0.0.1 192.168.1.250:8181 player4-nextcloud.duckdns.org
+sudo docker run -it \
+--name nextcloud-aio-mastercontainer \
+--restart always \
+-p 80:80 \
+-p 8080:8080 \
+-p 8443:8443 \
+--volume nextcloud_aio_mastercontainer:/mnt/docker-aio-config \
+--volume /var/run/docker.sock:/var/run/docker.sock:ro \
+nextcloud/all-in-one:latest-arm64
