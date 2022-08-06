@@ -1,9 +1,33 @@
-sudo docker run -it \
---name nextcloud-aio-mastercontainer \
---restart always \
--p 80:80 \
--p 8081:8081 \
--p 8443:8443 \
---volume nextcloud_aio_mastercontainer:/mnt/docker-aio-config \
---volume /var/run/docker.sock:/var/run/docker.sock:ro \
-nextcloud/all-in-one:latest-arm64
+version: '2'
+
+volumes:
+  nextcloud:
+  db:
+
+services:
+  db:
+    image: mariadb:10.5
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_PASSWORD=
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+
+  app:
+    image: nextcloud
+    restart: always
+    ports:
+      - 8080:80
+    links:
+      - db
+    volumes:
+      - nextcloud:/var/www/html
+    environment:
+      - MYSQL_PASSWORD=
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_HOST=db
