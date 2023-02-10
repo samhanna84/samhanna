@@ -1,5 +1,5 @@
 # Welcome
-## Everything is already configured to contain the data within it's own folder. That way it is easy to configure the service or for making backups.
+## Everything is already configured to contain the data within it's own folder. That way it is easy to configure the service or for making backups. Please review the docker compose file to see if changes are needed. 
 
 
 ### Please be sure install docker first.
