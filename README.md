@@ -4,6 +4,14 @@
 
 ### Please be sure install docker first.
 
+curl -sSL https://get.docker.com | sh
+
+sudo usermod -aG docker {USER}
+
+sudo systemctl start docker
+
+sudo systemctl enable docker
+
 ### Navigate to the folder for the service you want to install.
 <table><tr><td>cd foldername/</td></tr></table>
 
