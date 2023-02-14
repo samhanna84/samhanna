@@ -15,5 +15,6 @@ sudo systemctl enable docker
 ### Navigate to the folder for the service you want to install.
 <table><tr><td>cd foldername/</td></tr></table>
 
-###  Then type command below to install it.
+###  Then type command below to install it
+Prior to installing please make sure to check the docker compose file that everything is correct by typing nano docker-compose.yml
 <table><tr><td>sudo docker-compose up -d</td></tr></table>
