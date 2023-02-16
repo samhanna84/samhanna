@@ -12,6 +12,8 @@ sudo systemctl start docker
 
 sudo systemctl enable docker
 
+sudo apt install docker-compose
+
 ### Navigate to the folder for the service you want to install.
 <table><tr><td>cd foldername/</td></tr></table>
 
