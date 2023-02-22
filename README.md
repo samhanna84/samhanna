@@ -9,15 +9,11 @@ usermod -aG sudo newuser
 
 ### Please be sure install docker first.
 
-curl -sSL https://get.docker.com | sh
+sudo ./install_docker.sh
 
-sudo usermod -aG docker {USER}
+### Install portainer to manage docker containers.
 
-sudo systemctl start docker
-
-sudo systemctl enable docker
-
-sudo apt install docker-compose
+sudo ./install_portainer.sh
 
 ### Navigate to the folder for the service you want to install.
 <table><tr><td>cd foldername/</td></tr></table>
