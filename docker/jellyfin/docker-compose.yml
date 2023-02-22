@@ -5,11 +5,7 @@ services:
     container_name: jellyfin
     network_mode: "host"
     volumes:
-      - ./config:/config
-      - ./cache:/cache
-      - /mnt/usb:/media
-    devices:
-      # VAAPI Devices
-      - /dev/dri/renderD128:/dev/dri/renderD128
-      - /dev/dri/card0:/dev/dri/card0
+      - /selfhosted/jellyfin/config:/config
+      - /selfhosted/jellyfin/cache:/cache
+      - /mnt/usb:/media   #please change the path to your media
     restart: "unless-stopped"
