@@ -8,4 +8,4 @@ services:
     ports:
       - 8080:80
     volumes:
-      - ./vw-data:/data
+      - /selfhosted/vaultwarden/vw-data:/data
