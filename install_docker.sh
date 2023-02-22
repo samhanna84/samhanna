@@ -21,5 +21,6 @@ curl -sSL https://get.docker.com | sh || error "Failed to install Docker."
 sudo usermod -aG docker $USER || error "Failed to add user to the Docker usergroup."
 sudo systemctl start docker || error "Failed to start docker."
 sudo systemctl enable docker || error "Failed to enable docker."
+sudo apt install docker-compose || error "Failed to install docker-compose"
 
 echo "Remember to logoff/reboot for the changes to take effect."
