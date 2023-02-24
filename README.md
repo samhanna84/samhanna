@@ -15,7 +15,7 @@ sudo ./install_docker.sh
 
 sudo ./install_portainer.sh
 
-### Navigate to the folder for the service you want to install.
+### If you want to use docker compose, navigate to the folder for the service you want to install.
 <table><tr><td>cd foldername/</td></tr></table>
 
 ###  Then type command below to install it
