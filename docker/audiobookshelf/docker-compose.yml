@@ -9,3 +9,4 @@ services:
       - </path/to/podcasts>:/podcasts
       - </path/to/config>:/config
       - </path/to/metadata>:/metadata
+    restart: unless-stopped
