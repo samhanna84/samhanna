@@ -7,10 +7,6 @@ sudo adduser newuser
 
 usermod -aG sudo newuser
 
-### You can install openmediavault
-
-wget -O - https://raw.githubusercontent.com/OpenMediaVault-Plugin-Developers/installScript/master/install | sudo bash
-
 ### Please be sure install docker first.
 
 sudo ./install_docker.sh
