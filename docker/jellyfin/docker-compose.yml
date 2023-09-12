@@ -5,7 +5,7 @@ services:
     container_name: jellyfin
     network_mode: "host"
     volumes:
-      - /selfhosted/jellyfin/config:/config
-      - /selfhosted/jellyfin/cache:/cache
-      - /mnt/usb:/media   #please change the path to your media
+      - /YourPath/config:/config
+      - /YourPath/cache:/cache
+      - /YourPath:/media   #please change the path to your media
     restart: "unless-stopped"
