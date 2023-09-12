@@ -21,7 +21,7 @@ services:
     image: nextcloud
     restart: always
     ports:
-      - 8081:80
+      - 8081:80 #change the port as needed
     links:
       - db
     volumes:
