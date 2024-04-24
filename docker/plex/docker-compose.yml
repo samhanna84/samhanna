@@ -13,6 +13,6 @@ services:
       - PLEX_CLAIM= #optional
     volumes:
       - ./config:/config
-      - /mnt/usb/Videos/Tv:/tv
-      - /mnt/usb/Videos/Movies:/movies
+      - /YourPath/Tv:/tv
+      - /YourPath/Movies:/movies
     restart: unless-stopped
