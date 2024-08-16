@@ -9,6 +9,10 @@ usermod -aG sudo newuser
 
 ### Please be sure install docker first.
 
+curl -sSL https://get.docker.com | sh
+
+  or
+
 sudo ./install_docker.sh
 
 ### Install portainer to manage docker containers.
@@ -20,4 +24,4 @@ sudo ./install_portainer.sh
 
 ###  Then type command below to install it
 Prior to installing, please make sure to check the docker compose file that everything is correct by typing *nano docker-compose.yml*
-<table><tr><td>sudo docker-compose up -d</td></tr></table>
+<table><tr><td>docker compose up -d</td></tr></table>
