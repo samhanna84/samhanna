@@ -10,6 +10,7 @@ usermod -aG sudo newuser
 ### Please be sure install docker first.
 
 curl -sSL https://get.docker.com | sh
+sudo usermod -aG docker $USER
 
   or
 
